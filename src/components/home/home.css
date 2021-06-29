@@ -1,0 +1,14 @@
+.MuiPaper-root{
+    margin: 1rem !important;
+}
+.wrapper{
+    display: flex;
+    margin: auto;
+    padding: 2rem;
+}
+@media (max-width:500px) {
+    .wrapper{
+        margin-top: 1.4rem;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,76 @@
+.LoginPage{
+    height: 100vh;
+    transition: all ease-in-out 0.6s;
+  }
+  .LoginPage .LoginMain input{
+    outline: none;
+    border: none;
+    transition: all ease-in-out 0.6s;
+  }
+  .LoginPageImage{
+    display: flex;
+
+  }
+  .LoginPageImage img{
+    margin: auto;
+
+  }
+  .LoginPage .LoginMain .InputCont{
+    border-bottom: solid 0.8px rgba(0,0,0,0.5);
+    width: 20rem;
+    margin-left: 0;
+    margin-top: 1rem !important;
+    padding: 0.4rem;
+    transition: all ease-in-out 0.4s;
+    display: flex;
+    flex-direction: row;
+  }
+  .LoginPage .LoginMain .SocialLogin i{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 16px;
+    display: flex;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.6s;
+  }
+  .LoginPage .LoginMain .SocialLogin i::before{
+    color: #fff;
+    font-size: 18px;
+    margin: auto;
+  }
+  .LoginPage .LoginMain .SocialLogin .fa-facebook-f{
+    background: #3b5999;
+  }
+  .LoginPage .LoginMain .SocialLogin .fa-google-plus-g{
+    background: #db4437;
+  }
+  .LoginPage button:hover{
+    background: green;
+  }
+  .Remember p{
+    margin: auto 0;
+  }
+  @media (max-width:500px) {
+    .LoginPage img{
+      width: 90%;
+    }
+    .LoginPage h1{
+      margin: auto;
+      text-align: center;
+    }
+    .LoginMain .container{
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+    }
+    .LoginPage .LoginMain .InputCont{
+      margin-left: auto;
+    }
+  }

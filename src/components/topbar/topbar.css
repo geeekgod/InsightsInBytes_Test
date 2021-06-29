@@ -1,0 +1,11 @@
+.MuiAppBar-colorPrimary{
+    margin: 0 !important;
+    margin-left: 0 !important;
+}
+.TopBar{
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin: 0 !important;
+  z-index: 9999;
+}
