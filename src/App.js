@@ -52,8 +52,8 @@ function App() {
     setCardPos(cardpos + loc);
   }
 
-  if(cardpos !== 0){
-    const onHomeClick =(pos) =>{
+  function onHomeClick(pos){
+    if(cardpos !== 0){
       setCardPos(cardpos - pos);
     }
   }

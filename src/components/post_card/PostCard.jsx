@@ -30,9 +30,9 @@ export const PostCard = (props) => {
   });
 
   
-
-  // function onPostHomeClick(props.pos){
-  //   props.onHomeClick(props.pos);
+  // const location = props.pos;
+  // function onPostHomeClick(location){
+  //   props.onHomeClick(location);
   // }
   const NewPostCard = () => {
 
