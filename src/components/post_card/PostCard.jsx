@@ -74,15 +74,15 @@ export const PostCard = (props) => {
     );
   };
 
-  const onPostHomeClick = () =>{
-    if(props.loc != 0){
-      props.onHomeClick(props.loc);
-    }
-  }
+  // const onPostHomeClick = () =>{
+  //   if(props.loc != 0){
+  //     props.onHomeClick();
+  //   }
+  // }
 
   return (
     <div>
-        <TopBar post={true} loc = {props.loc} onHomeClick = {onPostHomeClick()}></TopBar>
+        <TopBar post={true} loc = {props.loc} onHomeClick = {props.onHomeClick}></TopBar>
         <div className="div" style={{display:"flex"}}>
             <div style={{margin:"auto"}}>
             <NewPostCard />

@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import PostCard from './components/post_card/PostCard';
+import Topbar from './components/topbar/TopBar';
 
 function Test(){
   return(
@@ -52,9 +53,10 @@ function App() {
     setCardPos(cardpos + loc);
   }
 
-  function onHomeClick(pos){
-    if(cardpos !== 0){
-      setCardPos(cardpos - pos);
+  const onHomeClick = (loc) =>{
+    console.log(loc);
+    if(loc !== 0){
+      setCardPos(cardpos - loc);
     }
   }
 
