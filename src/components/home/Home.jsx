@@ -24,6 +24,7 @@ const useStyles = makeStyles({
 export default function Home(props) {
   useEffect(()=>{
     window.scrollTo(0,0);
+    document.title = "InsightsInBytes"
   })
   const classes = useStyles();
 

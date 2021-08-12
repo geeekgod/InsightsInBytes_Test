@@ -1,23 +1,17 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import "./loginpage.css";
 import Button from "@material-ui/core/Button";
 import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useParams,
-  useRouteMatch
 } from "react-router-dom";
 
 export const LoginPage = (props) => {
-  //   useEffect(() => {
-  //     AOS.init({
-  //       duration: 2000,
-  //     });
-  //   }, []);
+    useEffect(() => {
+      document.title = "Login - InsightsInBytes";
+    }, []);
 
   const [loginHook, setLoginHook] = useState(true);
   const [checkHook, setCheckHook] = useState(false);

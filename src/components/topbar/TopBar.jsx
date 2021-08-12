@@ -9,11 +9,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import './topbar.css';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useParams,
-  useRouteMatch,
+  useLocation,
 } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
+
+  const location = useLocation().pathname;
+  console.log(location);
 
   return (
     <div className="TopBar">
