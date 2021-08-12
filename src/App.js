@@ -7,19 +7,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
-  useRouteMatch,
 } from "react-router-dom";
 import './App.css';
 import PostCard from './components/post_card/PostCard';
 import Topbar from './components/topbar/TopBar';
 
-function Test(){
-  return(
-    <Link></Link>
-  )
-}
 
 function App() {
   const userYurActName = "Name";
@@ -46,20 +38,6 @@ function App() {
     }
   };
 
-  
-  const[cardpos, setCardPos] = useState(0);
-
-  const onCardClick = (loc) =>{
-    setCardPos(cardpos + loc);
-  }
-
-  const onHomeClick = (loc) =>{
-    console.log(loc);
-    if(loc !== 0){
-      setCardPos(cardpos - loc);
-    }
-  }
-
   return (
     <Router>
       <Switch>
@@ -67,10 +45,10 @@ function App() {
           <LoginPage login={login} onLogin={onLogin} loginImg={loginImg} />
         </Route>
         <Route path="/feed/post/:slug">
-          <PostCard loc={cardpos} onHomeClick = {onHomeClick}/>
+          <PostCard />
         </Route>
         <Route path="/feed">
-          <Home data={data} onCardClick = {onCardClick} />
+          <Home data={data} />
         </Route>
       </Switch>
     </Router>

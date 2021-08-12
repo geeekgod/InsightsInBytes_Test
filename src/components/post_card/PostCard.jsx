@@ -77,7 +77,7 @@ export const PostCard = (props) => {
 
   return (
     <div>
-      <TopBar post={true} loc={props.loc}></TopBar>
+      <TopBar post={true}></TopBar>
       <div className="div" style={{ display: "flex" }}>
         <div style={{ margin: "auto" }}>
           <NewPostCard />

@@ -9,12 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import "./home.css";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useParams,
-  useRouteMatch,
 } from "react-router-dom";
 import TopBar from "../topbar/TopBar";
 
@@ -55,7 +50,7 @@ export default function Home(props) {
             <Button size="small" color="primary">
               Share
             </Button>
-            <Link to={`/feed/post/`+item.url} onClick={() => {props.onCardClick(pos)}}>
+            <Link to={`/feed/post/`+item.url} >
             <Button size="small" color="primary">
               Learn More
             </Button>
