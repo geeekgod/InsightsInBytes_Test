@@ -62,18 +62,15 @@ function App() {
 
   return (
     <Router>
-      {/* <div className="App">
-      </div> */}
-
       <Switch>
         <Route exact path="/">
           <LoginPage login={login} onLogin={onLogin} loginImg={loginImg} />
         </Route>
-        <Route path="/Feed">
-          <Home data={data} onCardClick = {onCardClick} />
-        </Route>
-        <Route path="/post">
+        <Route path="/feed/post/:slug">
           <PostCard loc={cardpos} onHomeClick = {onHomeClick}/>
+        </Route>
+        <Route path="/feed">
+          <Home data={data} onCardClick = {onCardClick} />
         </Route>
       </Switch>
     </Router>

@@ -45,7 +45,7 @@ export default function ButtonAppBar(props) {
             }
           </Typography>
           {
-            props.post ? <Link  style={{textDecoration:"none" , color:"#fff"}} onClick = {() => {props.onHomeClick(props.loc)}} to = "/feed" > <Button color="inherit">Home</Button></Link>
+            props.post ? <Link  style={{textDecoration:"none" , color:"#fff"}} to = "/feed" > <Button color="inherit">Home</Button></Link>
             : null
           }
           <Button color="inherit">Login</Button>

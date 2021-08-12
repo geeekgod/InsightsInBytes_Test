@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -9,12 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import data from "../../data/data";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
+  useParams, Link
 } from "react-router-dom";
 import TopBar from "../topbar/TopBar";
 
@@ -29,19 +24,27 @@ export const PostCard = (props) => {
     },
   });
 
-  
-  // const location = props.pos;
-  // function onPostHomeClick(location){
-  //   props.onHomeClick(location);
-  // }
+  let { slug } = useParams();
+  const [locationBlog, setLocationBlog] = useState(0);
+  const [loadLocation, setLoadLocation] = useState(true);
+
+  if (loadLocation == true) {
+    data.dat.map((item, pos) => {
+      if (slug == item.url) {
+        setLocationBlog(locationBlog + pos);
+        setLoadLocation(false);
+      }
+    })
+  }
+  let cardData = data.dat[locationBlog];
+  useEffect(() => {
+    setLoadLocation(true);
+    setLocationBlog(0);
+    window.scrollTo(0, 0);
+    document.title = cardData.head;
+  }, []);
+
   const NewPostCard = () => {
-
-    console.log(props.loc);
-
-    let cardData = data.dat[props.loc];
-
-   console.log(cardData);
-
     const classes = useStyles();
     return (
       <Card className={classes.root}>
@@ -52,11 +55,9 @@ export const PostCard = (props) => {
             title="Contemplative Reptile"
           />
           <CardContent>
-            <Link to="/post" style={{ textDecoration: "none", color: "black" }}>
-              <Typography gutterBottom variant="h5" component="h2">
-                {cardData.head}
-              </Typography>
-            </Link>
+            <Typography gutterBottom variant="h5" component="h2">
+              {cardData.head}
+            </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {cardData.summary}
             </Typography>
@@ -74,20 +75,14 @@ export const PostCard = (props) => {
     );
   };
 
-  // const onPostHomeClick = () =>{
-  //   if(props.loc != 0){
-  //     props.onHomeClick();
-  //   }
-  // }
-
   return (
     <div>
-        <TopBar post={true} loc = {props.loc} onHomeClick = {props.onHomeClick}></TopBar>
-        <div className="div" style={{display:"flex"}}>
-            <div style={{margin:"auto"}}>
-            <NewPostCard />
-            </div>
+      <TopBar post={true} loc={props.loc}></TopBar>
+      <div className="div" style={{ display: "flex" }}>
+        <div style={{ margin: "auto" }}>
+          <NewPostCard />
         </div>
+      </div>
     </div>
   );
 };

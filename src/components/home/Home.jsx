@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -26,13 +26,15 @@ const useStyles = makeStyles({
     height: 140,
   },
 });
-
 export default function Home(props) {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  })
   const classes = useStyles();
 
   const cardDat = props.data.dat.map((item, pos) => {
     return (
-      <div key={pos} className="col-md-4">
+      <div key={pos} className="col-lg-4 col-md-6">
         <Card className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -41,11 +43,9 @@ export default function Home(props) {
               title="Contemplative Reptile"
             />
             <CardContent>
-              <Link style={{textDecoration:"none", color:"black"}}>
               <Typography gutterBottom variant="h5" component="h2">
                 {item.head}
               </Typography>
-              </Link>
               <Typography variant="body2" color="textSecondary" component="p">
                 {item.summary}
               </Typography>
@@ -55,7 +55,7 @@ export default function Home(props) {
             <Button size="small" color="primary">
               Share
             </Button>
-            <Link to="/post" onClick={() => {props.onCardClick(pos)}}>
+            <Link to={`/feed/post/`+item.url} onClick={() => {props.onCardClick(pos)}}>
             <Button size="small" color="primary">
               Learn More
             </Button>
