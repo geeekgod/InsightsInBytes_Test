@@ -48,6 +48,9 @@ export const PostCard = (props) => {
     const classes = useStyles();
     return (
       <Card className={classes.root}>
+        <Typography gutterBottom variant="h5" component="h2">
+          {cardData.head}
+        </Typography>
         <CardActionArea>
           <CardMedia
             className={classes.media}
@@ -55,9 +58,6 @@ export const PostCard = (props) => {
             title="Contemplative Reptile"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {cardData.head}
-            </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {cardData.summary}
             </Typography>

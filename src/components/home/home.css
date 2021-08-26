@@ -1,5 +1,9 @@
-.MuiPaper-root{
+.MuiCard-root{
     margin: 1rem auto !important;
+    background: #3f51b5 !important;
+    padding: 0 0.3rem;
+    box-shadow: 4px 5px 10px -1px rgb(0 0 0 / 20%) !important;
+    border-radius: 10px !important;
 }
 .col-lg-4{
     display: flex;
@@ -12,13 +16,22 @@
 .MuiPaper-root h2{
     padding: 1.2rem;
     margin-bottom: 0;
+    color: #fff;
 }
 .MuiCardActionArea-root{
     border-radius: 30px !important;
+    margin: auto !important;
 }
 .MuiCardMedia-root{
     border-radius: 30px 30px 0 0;
     height: 190px !important;
+}
+.MuiCardContent-root{
+    background: #fff;
+    border-radius: 0 0 30px 30px;
+}
+.MuiCardActions-root  .MuiButton-label{
+    color: #fff;
 }
 @media (max-width:500px) {
     .wrapper{
