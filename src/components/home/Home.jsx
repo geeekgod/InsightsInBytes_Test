@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -22,8 +22,8 @@ const useStyles = makeStyles({
   },
 });
 export default function Home(props) {
-  useEffect(()=>{
-    window.scrollTo(0,0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "InsightsInBytes"
   })
   const classes = useStyles();
@@ -32,6 +32,9 @@ export default function Home(props) {
     return (
       <div key={pos} className="col-lg-4 col-md-6">
         <Card className={classes.root}>
+          <Typography gutterBottom variant="h5" component="h2">
+            {item.head}
+          </Typography>
           <CardActionArea>
             <CardMedia
               className={classes.media}
@@ -39,9 +42,6 @@ export default function Home(props) {
               title="Contemplative Reptile"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {item.head}
-              </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 {item.summary}
               </Typography>
@@ -51,9 +51,9 @@ export default function Home(props) {
             <Button size="small" color="primary">
               Share
             </Button>
-            <Link to={`/feed/post/`+item.url} >
-            <Button size="small" color="primary">
-              Learn More
+            <Link to={`/feed/post/` + item.url} >
+              <Button size="small" color="primary">
+                Learn More
             </Button>
             </Link>
           </CardActions>
