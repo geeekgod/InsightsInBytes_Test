@@ -48,7 +48,7 @@ export default function ButtonAppBar(props) {
             props.post ? <Link  style={{textDecoration:"none" , color:"#fff"}} to = "/feed" > <Button color="inherit">Home</Button></Link>
             : null
           }
-          <Button color="inherit">Login</Button>
+          <Button color="inherit"><Link to="/">Login</Link></Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./loginpage.css";
 import Button from "@material-ui/core/Button";
 import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
@@ -9,17 +9,15 @@ import {
 } from "react-router-dom";
 
 export const LoginPage = (props) => {
-    useEffect(() => {
-      document.title = "Login - InsightsInBytes";
-    }, []);
+  useEffect(() => {
+    document.title = "Login - InsightsInBytes";
+  }, []);
 
   const [loginHook, setLoginHook] = useState(true);
   const [checkHook, setCheckHook] = useState(false);
 
-  function loginClick() {
-    const pass = document.getElementById("password").value;
-    console.log(pass);
-  }
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
   const rememberClicked = () => {
     const check = document.getElementById("check").checked;
@@ -94,6 +92,8 @@ export const LoginPage = (props) => {
                     type="text"
                     name="name"
                     id="name"
+                    onChange={e => setUserName(e.target.value)}
+                    value={userName}
                   />
                 </div>
 
@@ -109,6 +109,8 @@ export const LoginPage = (props) => {
                     name="password"
                     id="password"
                     minLength="8"
+                    onChange={e => setPassword(e.target.value)}
+                    value={password}
                   />
                 </div>
 
@@ -135,13 +137,7 @@ export const LoginPage = (props) => {
                   style={{ display: "flex", padding: "0.5rem" }}
                   className="Remember my-3"
                 >
-                  {/* <input
-                    id="check"
-                    onClick={() => setCheckHook(!checkHook)}
-                    style={{ marginTop: "auto", marginBottom: "auto" }}
-                    type="checkbox"
-                  /> */}
-                  <Checkbox id="check"  onClick={() => {rememberClicked()}}  name="checkedF" color="primary" />
+                  <Checkbox id="check" onClick={() => { rememberClicked() }} name="checkedF" color="primary" />
                   <label style={{ marginTop: "auto", marginBottom: "auto" }} onClick={() => rememberClicked()} className="mx-4">
                     Remember Me
                   </label>
@@ -169,24 +165,10 @@ export const LoginPage = (props) => {
                     marginBottom: "1.5rem",
                   }}
                 >
-                  {/* <button
-                    onClick={loginClick}
-                    style={{
-                      marginLeft: "auto",
-                      background: "#61dafb",
-                      border: "none",
-                      borderRadius: "6px",
-                      padding: "8px 40px",
-                      color: "#fff",
-                    }}
-                  >
-                    {loginHook ? "Login" : "Register"}
-                  </button> */}
-
-                  <Link style={{textDecoration:"none"}} to={props.login ? "/Feed" : "/"}>
-                  <Button onClick={props.onLogin} variant="contained" color="primary">
-                    {loginHook ? "Login" : "Register"}
-                  </Button>
+                  <Link style={{ textDecoration: "none" }} to={props.login ? "/Feed" : "/"}>
+                    <Button onClick={() => props.onLogin(userName, password)} variant="contained" color="primary">
+                      {loginHook ? "Login" : "Register"}
+                    </Button>
                   </Link>
                 </div>
 

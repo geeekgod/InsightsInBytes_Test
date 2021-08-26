@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import './App.css';
 import PostCard from './components/post_card/PostCard';
-import Topbar from './components/topbar/TopBar';
 
 
 function App() {
@@ -19,16 +18,16 @@ function App() {
 
   const [login, setlogin] = useState(false);
 
-  const onLogin = () => {
-    const userXuzName = document.getElementById("name").value;
-    const userXuzPassword = document.getElementById("password").value;
+  const onLogin = (name, pass) => {
+    const userXuzName = name;
+    const userXuzPassword = pass;
 
     checkUser(userXuzName, userXuzPassword);
   };
 
   const checkUser = (Name, Pass) => {
-    if (Name === userYurActName) {
-      if (Pass === userYurActPass) {
+    if (Name == userYurActName) {
+      if (Pass == userYurActPass) {
         console.log(login);
         setlogin(!login);
         console.log(login);
