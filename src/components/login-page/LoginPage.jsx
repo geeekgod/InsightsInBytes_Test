@@ -3,10 +3,7 @@ import { useState, useEffect } from "react";
 import "./loginpage.css";
 import Button from "@material-ui/core/Button";
 import Checkbox, { CheckboxProps } from "@material-ui/core/Checkbox";
-import {
-  BrowserRouter as Router,
-  Link,
-} from "react-router-dom";
+
 
 export const LoginPage = (props) => {
   useEffect(() => {
@@ -165,11 +162,9 @@ export const LoginPage = (props) => {
                     marginBottom: "1.5rem",
                   }}
                 >
-                  <Link style={{ textDecoration: "none" }} to={props.login ? "/Feed" : "/"}>
-                    <Button onClick={() => props.onLogin(userName, password)} variant="contained" color="primary">
-                      {loginHook ? "Login" : "Register"}
-                    </Button>
-                  </Link>
+                  <Button onClick={() => props.onLogin(userName, password)} variant="contained" color="primary">
+                    {loginHook ? "Login" : "Register"}
+                  </Button>
                 </div>
 
                 <div className="SocialLogin my-4 d-flex">

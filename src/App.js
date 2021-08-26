@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 import './App.css';
 import PostCard from './components/post_card/PostCard';
@@ -18,30 +19,20 @@ function App() {
 
   const [login, setlogin] = useState(false);
 
-  const onLogin = (name, pass) => {
-    const userXuzName = name;
-    const userXuzPassword = pass;
-
-    checkUser(userXuzName, userXuzPassword);
-  };
-
-  const checkUser = (Name, Pass) => {
-    if (Name == userYurActName) {
-      if (Pass == userYurActPass) {
-        console.log(login);
+  const onLogin = (Name, Pass) => {
+    if (Name === userYurActName) {
+      if (Pass === userYurActPass) {
         setlogin(!login);
-        console.log(login);
       }
     } else {
-      alert("The creds entered are wrong ");
+      alert("The creds you entered are wrong ");
     }
   };
-
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <LoginPage login={login} onLogin={onLogin} loginImg={loginImg} />
+          {login ? <Redirect to="/feed" /> : <LoginPage login={login} onLogin={onLogin} loginImg={loginImg} />}
         </Route>
         <Route path="/feed/post/:slug">
           <PostCard />
