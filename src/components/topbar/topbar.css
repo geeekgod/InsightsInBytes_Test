@@ -1,13 +1,13 @@
-a{
+a {
   text-decoration: none;
-  color: inherit;
+  color: #fff;
 }
-.MuiAppBar-colorPrimary{
-    margin: 0 !important;
-    margin-left: 0 !important;
+.MuiAppBar-colorPrimary {
+  margin: 0 !important;
+  margin-left: 0 !important;
 }
-.TopBar{
-    position: -webkit-sticky;
+.TopBar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   margin: 0 !important;

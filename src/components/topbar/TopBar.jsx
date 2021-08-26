@@ -33,7 +33,7 @@ export default function ButtonAppBar(props) {
 
   return (
     <div className="TopBar">
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
